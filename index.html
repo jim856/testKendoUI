@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>kendoui-vue</title>
+    @{
+      var version = typeof(Kendo.Mvc.KendoServices).Assembly.GetName().Version;
+      string kendoCDN = $"//kendo.cdn.telerik.com/{version.Major}.{version.Minor}.{version.Build}";
+      }
+  <link href="@Url.Content(kendoCDN + "/styles/kendo.bootstrap-v4.min.css")" rel="stylesheet" type="text/css" />
+  <link href="@Url.Content(kendoCDN + "/styles/kendo.common-material.min.css")" rel="stylesheet" />
+  <link href="@Url.Content(kendoCDN + "/styles/kendo.rtl.min.css")" rel="stylesheet" />
+  <link href="@Url.Content(kendoCDN + "/styles/kendo.material.min.css")" rel="stylesheet" />
+  <link href="@Url.Content(kendoCDN + "/styles/kendo.material.mobile.min.css")" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-16x16.png">
     <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
